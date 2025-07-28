@@ -66,16 +66,21 @@ CREATE TABLE coins (
 
 Además de la creación de la tabla, se sugiere crear 2  indices para la búsqueda de nombre y el símbolo de la moneda como buenas practicas a la hora de consultar la tabla:
 
--- Índice por el nombre de la criptomoneda
+-- Índice por el nombre de la criptomoneda: 
+```
 CREATE INDEX idx_coins_name ON coins(name);
+```
 
--- Índice por el símbolo de la criptomoneda
+-- Índice por el símbolo de la criptomoneda: 
+```
 CREATE INDEX idx_coins_symbol ON coins(symbol);
+```
 
 
 5. Ejecuta Airflow
 Se configura Airflow con sus credenciales de la siguiente manera:
 
+```
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow db init
 airflow users create \
@@ -85,21 +90,28 @@ airflow users create \
   --role Admin \
   --email admin@example.com \
   --password your_password
+```
 
 Una vez configurado, se debe tener 2 terminales para ejecutar 2 procesos de Airflow, uno la parte grafica web y la otra la funcional. Para eso ambos terminales de Ubuntu deben estar en la carpeta proyecto e iniciar el entorno virtual. Una vez dentro se debe ejecutar en el primer terminal el siguiente comando:
 
+```
 airflow scheduler
+```
 
 Y en el segundo terminal el siguiente comando:
 
+```
 airflow webserver --port 9090
+```
 
 6. Accede a la interfaz de Airflow
 Ve a: http://localhost:9090
 
+```
 Usuario: Your_user
 
 Contraseña: your_password
+```
 
 Activa el DAG llamado etl_dag y ejecútalo manualmente o espera su ejecución automática diaria a las 12:00 PM (hora Colombia).
 
