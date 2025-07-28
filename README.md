@@ -115,6 +115,15 @@ Contraseña: your_password
 
 Activa el DAG llamado etl_dag y ejecútalo manualmente o espera su ejecución automática diaria a las 12:00 PM (hora Colombia).
 
+7. Visualización de los datos
+Para ver el resultado del proyecto se puede generar una consulta sencilla en base de datos para ver el resultado
+
+```
+SELECT * FROM coins;
+```
+8. Ajuste de número de datos
+El proyecto consulta la API con el archivo extract_api.py, agrupa los datos en paquetes de 20 con la variable per_page y por último toma el número de paquete 1 (los primeros 20 datos encontrados) con la variable page. Si se quiere codificar el número de datos que se quiere quiere consultar a la API o que numero de paquete consultara, modificar estos valores numéricos.
+
 📈 Frecuencia de Ejecución
 Este DAG se ejecuta diariamente a las 12:00 PM (hora Colombia). Si se desea cambiar la hora se debe ajustar en el archivo etl_dag.py en la variable schedule_interval (tener en cuenta la hora del servidor, ya que puede no coincidir con la hora local del usuario).
 
