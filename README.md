@@ -5,18 +5,17 @@ crypto-etl-pipeline es un pipeline ETL automatizado que extrae datos de criptomo
 ## Estructura del Proyecto
 
 Prueba_Ingeniero_Datos/
-│
-├── dags/
-│ └── etl_dag.py
-│
-├── src/
-│ ├── extract_api.py
-│ ├── transform_spark.py
-│ └── load_db.py
-│
-├── requirements.txt
-├── README.md
-└── ...
+ │
+ ├── dags/
+ │ └── etl_dag.py
+ │
+ ├── src/
+ │ ├── extract_api.py
+ │ ├── transform_spark.py
+ │ └── load_db.py
+ │
+ ├── requirements.txt
+ └── README.md
 
 
 ## Tecnologías Usadas
